@@ -44,6 +44,9 @@
                         <li>
                             <a href="/MotoShop/proizvod">Proizvod</a>
                         </li>
+                        <li>
+                            <a href="/MotoShop/login">Login</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
