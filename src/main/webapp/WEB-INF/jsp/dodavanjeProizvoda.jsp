@@ -1,4 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,20 +7,22 @@
     <%@include file="header.jsp" %>
 
     <div id="box">
-        <h2>Podaci o proizvodu</h2>
-        <table class="table">
-            <tr>
-                <td>Ime</td>
-                <td>${ime}</td>
-            </tr>
-            <tr>
-                <td>Cena</td>
-                <td>${cena}</td>
-            </tr>
-            <tr>
-                <td>Opis</td>
-                <td>${opis}</td>
-            </tr>
+        <h1>Proizvodi:</h1>
+        <c:if test="${!empty proizvodi}">
+            <table>
+                <tr>
+                    <th width="350"> Naziv </th>
+                    <th width="200"> Cena </th>
+                </tr>
+                <c:forEach items="${proizvodi}" var="proizvod">
+                    <tr>
+                        <td>${proizvod.proizvod_naziv}</td>
+                        <td>${proizvod.proizvod_cena}</td>
+                        <td>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </c:if>
         </table>
     </div>
 

@@ -1,7 +1,8 @@
 com\mycompany\webflow\LoginService.class
+com\mycompany\mapper\ProizvodMapper.class
+com\mycompany\model\Proizvod.class
 com\mycompany\route\MainController.class
 com\mycompany\dao\ProizvodDao.class
 com\mycompany\dao\impl\ProizvodDaoImpl.class
-com\mycompany\data\Proizvod.class
 com\mycompany\aspect\InterceptorLog.class
 com\mycompany\webflow\LoginBean.class

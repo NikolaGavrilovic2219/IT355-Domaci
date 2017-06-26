@@ -36,14 +36,11 @@
                             <a href="#">O nama</a>
                         </li>
                         <li>
-                            <a href="#">Dodaj</a>
+                            <a href="/MotoShop/proizvod">Dodaj</a>
                         </li>
                         <li>
-                            <a href="#">Kontakt</a>
-                        </li>
-                        <li>
-                            <a href="/MotoShop/proizvod">Proizvod</a>
-                        </li>
+                            <a href="/MotoShop/dodavanjeProizvoda">Prikaz</a>
+                        </li>                        
                         <li>
                             <a href="/MotoShop/login">Login</a>
                         </li>

@@ -1,5 +1,7 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@page session="false" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>  
-<html> 
+<html xmlns:th="http://www.thymeleaf.org"> 
     <head> 
         <title>Dodavanje proizvoda</title> 
     </head> 
@@ -7,27 +9,30 @@
 
         <%@include file="header.jsp" %>
 
+        <form:form method="POST" action="proizvod?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" >
 
-        <form:form method="POST" action="/MotoShop/dodavanjeProizvoda" commandName="proizvod">
-            
             <div id="box">
                 <h2>Unesite informacije o proizvodu</h2>
                 <table class="table">
                     <tr>
-                        <td><form:label path="ime">Ime proizvoda:</form:label></td>
-                        <td><form:input path="ime" class="form-control"/></td>
+                        <td><form:label path="proizvod_naziv">Naziv proizvoda:</form:label></td>
+                        <td><form:input id="proizvod_naziv" placeholder="naziv proizvoda" path="proizvod_naziv" class="form-control"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="cena">Cena proizvoda:</form:label></td>
-                        <td><form:input path="cena" class="form-control"/></td>
+                        <td><form:label path="proizvod_cena">Cena proizvoda:</form:label></td>
+                        <td><form:input id="proizvod_cena" placeholder="cena proizvoda" path="proizvod_cena" class="form-control"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="opis">Opis proizvoda:</form:label></td>
-                        <td><form:input path="opis" class="form-control"/></td>
+                        <td><form:label path="proizvod_opis">Opis proizvoda:</form:label></td>
+                        <td><form:input id="proizvod_opis" placeholder="opis proizvoda" path="proizvod_opis" class="form-control"/></td>
+                    </tr>
+                    <tr>
+                        <td><form:label path="proizvod_slika">Slika proizvoda:</form:label></td>
+                        <td><input id="proizvod_slika" type="file"  class="form-control" name="file"/></td>       
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <div id="box"> <input type="submit" value="Pošalji" class="btn-primary"/></div>
+                            <div id="box"> <input type="submit" value="posalji" class="btn-primary"/></div>
                         </td>
                     </tr>
                 </table>
