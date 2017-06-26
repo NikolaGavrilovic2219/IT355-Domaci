@@ -30,6 +30,19 @@ public class Proizvod implements Serializable {
     @Column(name = "proizvod_slika")
     private String proizvod_slika;
 
+    public Proizvod() {
+    }
+
+    public Proizvod(int proizvod_id, String proizvod_naziv, int proizvod_cena, String proizvod_opis, String proizvod_slika) {
+        this.proizvod_id = proizvod_id;
+        this.proizvod_naziv = proizvod_naziv;
+        this.proizvod_cena = proizvod_cena;
+        this.proizvod_opis = proizvod_opis;
+        this.proizvod_slika = proizvod_slika;
+    }
+    
+    
+    
     public int getProizvod_id() {
         return proizvod_id;
     }
