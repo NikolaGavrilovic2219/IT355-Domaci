@@ -1,6 +1,7 @@
 com\mycompany\webflow\LoginService.class
 com\mycompany\mapper\ProizvodMapper.class
 com\mycompany\model\Proizvod.class
+com\mycompany\route\MotoShopRestController.class
 com\mycompany\route\MainController.class
 com\mycompany\dao\ProizvodDao.class
 com\mycompany\dao\impl\ProizvodDaoImpl.class
