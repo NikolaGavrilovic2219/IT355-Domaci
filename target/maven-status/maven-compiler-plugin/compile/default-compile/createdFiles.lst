@@ -1,5 +1,5 @@
 com\mycompany\dao\ProizvodDao.class
 com\mycompany\dao\impl\ProizvodDaoImpl.class
+com\mycompany\data\Proizvod.class
 com\mycompany\aspect\InterceptorLog.class
-com\mycompany\route\data\Proizvod.class
 com\mycompany\route\MainController.class
