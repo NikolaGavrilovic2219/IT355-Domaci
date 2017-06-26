@@ -27,7 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
     @Autowired
-    private ProizvodDao proizvodDao;
+    ProizvodDao proizvodDao;
 
     @RequestMapping(method = RequestMethod.GET, path = "/")
      public ModelAndView printHello(ModelAndView modelAndView) {
@@ -128,7 +128,8 @@ public class MainController {
 
     @RequestMapping(value = "/deleteproizvod/{proizvod_id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable int proizvod_id, ModelAndView model) {
-        proizvodDao.delete(proizvod_id);
+        Proizvod proizvod = proizvodDao.getProizvodById(proizvod_id);
+        proizvodDao.delete(proizvod);
         return new ModelAndView("redirect:/");
     }
 }

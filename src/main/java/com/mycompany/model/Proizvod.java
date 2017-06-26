@@ -1,15 +1,33 @@
 package com.mycompany.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
-@SuppressWarnings("serial")
+@Entity
+@Table(name = "proizvodi")
 public class Proizvod implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "proizvod_id")
     private int proizvod_id;
+    
+    @Column(name = "proizvod_naziv")
     private String proizvod_naziv;
+    
+    @Column(name = "proizvod_cena")
     private int proizvod_cena;
+    
+    @Column(name = "knjiga_opis")
     private String proizvod_opis;
+    
+    @Column(name = "proizvod_slika")
     private String proizvod_slika;
 
     public int getProizvod_id() {
@@ -54,14 +72,8 @@ public class Proizvod implements Serializable {
 
     @Override
     public String toString() {
-        return "Proizvod{" + "proizvod_id=" + proizvod_id + ", proizvod_naziv=" + proizvod_naziv 
-             + ", proizvod_cena=" + proizvod_cena + ", proizvod_opis=" + proizvod_opis + ", proizvod_slika=" + proizvod_slika + '}';
+        return "Proizvod{" + "proizvod_id=" + proizvod_id + ", proizvod_naziv=" + proizvod_naziv
+                + ", proizvod_cena=" + proizvod_cena + ", proizvod_opis=" + proizvod_opis + ", proizvod_slika=" + proizvod_slika + '}';
     }
 
- 
-    
-    
-    
-    
-    
 }

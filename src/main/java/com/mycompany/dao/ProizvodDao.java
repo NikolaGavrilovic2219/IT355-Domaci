@@ -15,13 +15,13 @@ public interface ProizvodDao {
 
     public List<Proizvod> getAllProizvodi();
 
-    public boolean addProizvodd(Proizvod proizvod);
+    public Proizvod addProizvodd(Proizvod proizvod);
     
     public boolean updateProizvod(Proizvod proizvod);
     
     public Proizvod getProizvodById(int id);
     
-    public int delete(int id);
+    public void delete(Proizvod proizvod);
     
     
 }
