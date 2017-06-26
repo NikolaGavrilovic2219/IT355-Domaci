@@ -41,6 +41,9 @@
                         <li>
                             <a href="#">Kontakt</a>
                         </li>
+                        <li>
+                            <a href="/MotoShop/proizvod">Proizvod</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
