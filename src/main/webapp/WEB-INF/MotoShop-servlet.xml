@@ -1,9 +1,13 @@
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/webflow-config
+                    http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd
+                    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
                     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd     
                     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
                     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
@@ -17,7 +21,7 @@
     <mvc:annotation-driven />
         
     <bean id="messageSource"
-              class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basenames">
             <list>
                 <value>/WEB-INF/lang/proizvod</value>
@@ -47,5 +51,14 @@
             </list>
         </property>
     </bean>
-    
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="itemSearchFlowRegistry" />
+    </bean>
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+        <property name="flowExecutor" ref="itemSearchFlowExecutor" />
+    </bean>
+    <flow:flow-executor id="itemSearchFlowExecutor" flow-registry="itemSearchFlowRegistry" />
+    <flow:flow-registry id="itemSearchFlowRegistry">
+        <flow:flow-location id="itemSearchFlow" path="WEB-INF/item-search-flow.xml" />
+    </flow:flow-registry>
 </beans>
